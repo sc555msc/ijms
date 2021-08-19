@@ -319,7 +319,53 @@
 </div>
 
 <div class="content" role="main">
-<router-outlet></router-outlet>
+  <!-- Highlight Card -->
+  
+  <!-- Resources -->
+  <h2>Services</h2>
+  <p>Find your future here..</p>
+
+  <div class="card-container">
+    <a class="card" target="_blank" rel="noopener" routerLink = "/candidates">
+      
+      <span>Add your CV</span>
+    </a>
+
+    <a class="card" target="_blank" rel="noopener" routerLink = "#">
+      
+      <span>Add your Vacancy</span>
+      
+    </a>
+
+    <a class="card" target="_blank" rel="noopener" routerLink = "/candidates">
+      
+      <span>Candidate List</span>
+      
+    </a>
+
+
+  </div>
+
+  <!-- Next Steps -->
+  <h2>Next Steps</h2>
+  <p>What do you want to do next with your app?</p>
+
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+      
+      <span>Step1</span>
+    </button>
+
+    <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+      
+      <span>Step2</span>
+    </button>
+
+  </div>
+
+
   <!-- Links -->
   <div class="card-container ">
     <a class="circle-link" title="github" href="https://github.com/sc555msc" target="_blank" rel="noopener">
@@ -351,3 +397,4 @@
 
 </div>
 
+<router-outlet></router-outlet>
