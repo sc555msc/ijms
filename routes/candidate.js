@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
 	Candidate.find(function (err, candidates) {
     if (err) { return next(err);}
     else {
-    	res.setHeader('Access-Control-Allow-Credentials', true);
     	res.json(candidates);
     }
   });
