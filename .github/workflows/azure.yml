@@ -38,18 +38,5 @@ jobs:
       run: |
         # Build and start frond end
         npm install
+        ng serve
         
-  backend:
-    name: Backend
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    - name: npm install, build
-      run: |
-        # Run express server
-        npm start
