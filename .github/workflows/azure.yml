@@ -38,5 +38,5 @@ jobs:
       run: |
         # Build and start frond end
         npm install
-        npm build
+        ng build
         
