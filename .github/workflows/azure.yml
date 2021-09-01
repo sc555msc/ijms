@@ -30,7 +30,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [12.20.0, 13.14.0, 14.17.4]
+        node-version: [13.14.0, 14.17.4, 15.14.0]
         
     environment: production
     steps:
