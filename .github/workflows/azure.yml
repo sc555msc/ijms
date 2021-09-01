@@ -27,13 +27,18 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.20.0, 13.14.0, 14.17.4]
+        
     environment: production
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ env.NODE_VERSION }}
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ env.NODE_VERSION }}
+        node-version: ${{ matrix.node-version }}
     - name: npm install, build
       run: |
         # Build and start frond end
