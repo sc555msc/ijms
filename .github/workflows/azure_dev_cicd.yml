@@ -44,4 +44,23 @@ jobs:
         # Build and start frond end
         npm install
         npm run build
-        ng test
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.14, 14.17.4, 15.14.0]
+        
+    environment: production
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: ng test
+      run: |
+        # Run unit tests
+        npm test
+
