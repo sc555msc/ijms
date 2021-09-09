@@ -44,4 +44,4 @@ jobs:
         # Build and start frond end
         npm install
         npm run build
-        
+        ng test
