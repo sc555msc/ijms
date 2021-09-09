@@ -62,5 +62,7 @@ jobs:
     - name: ng test
       run: |
         # Run unit tests
+        npm install
+        npm run build
         npm test
 
