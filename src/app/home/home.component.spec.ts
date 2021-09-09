@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgModule  } from '@angular/core';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +10,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ]      
     })
     .compileComponents();
   });
@@ -22,4 +24,15 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  
+  it('should have title in toolbar', async(() => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.toolbar span').textContent).toContain('Industrial Job Management System');
+  }));
+  
+    
+  
 });
