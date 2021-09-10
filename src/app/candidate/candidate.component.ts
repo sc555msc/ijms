@@ -13,9 +13,8 @@ export class CandidateComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-	  this.http.get('http://127.0.0.1:3000').subscribe(data => {
+	  this.http.get('http://127.0.0.1:3000/candidate').subscribe(data => {
 	    this.candidates = data;
-	    console.log(this.candidates);
 	  });
   }
 
