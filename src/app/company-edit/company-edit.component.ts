@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
 import { Company } from "../model/company";
 import { CommonModule } from '@angular/common';
+import * as jimsGlobals from '../common/globals';
 
 @Component({
   selector: 'app-company-edit',
@@ -24,13 +25,13 @@ export class CompanyEditComponent implements OnInit {
 	}
 	
 	getCompany(id:any) {
-		this.http.get('http://127.0.0.1:3000/company/'+id).subscribe(data => {
+		this.http.get(jimsGlobals.back_end_api + '/company/'+id).subscribe(data => {
 			this.company = data;
 		});
 	}
 	
    updateCompany(data:any) {
-		this.http.put('http://127.0.0.1:3000/company/' + this.s_id, data)
+		this.http.put(jimsGlobals.back_end_api + '/company/' + this.s_id, data)
 		.subscribe(res => {
 			this.router.navigate(['/company-details', this.s_id]);
 		}, (err) => {

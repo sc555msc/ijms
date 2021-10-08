@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import jspdf from 'jspdf';    
 import html2canvas from 'html2canvas';  
+import * as jimsGlobals from '../common/globals';
 
 @Component({
   selector: 'app-company-details',
@@ -23,7 +24,7 @@ export class CompanyDetailsComponent implements OnInit {
 		
 	getCompanyDetail(id:any) {
 		
-		this.http.get('http://127.0.0.1:3000/company/'+id).subscribe(data => {
+		this.http.get(jimsGlobals.back_end_api +'/company/'+id).subscribe(data => {
 			this.company = data;
 		});		
 	}

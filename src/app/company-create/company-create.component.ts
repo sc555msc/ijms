@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
 import { Company } from "../model/company";
 import { CommonModule } from '@angular/common';
+import * as jimsGlobals from '../common/globals';
 
 @Component({
   selector: 'app-company-create',
@@ -23,7 +24,7 @@ export class CompanyCreateComponent implements OnInit {
   
   saveCompany(data:any) {
   
-		this.http.post('http://127.0.0.1:3000/company', data)
+		this.http.post(jimsGlobals.back_end_api + '/company', data)
 			.subscribe(res => {
 				this.Company = res;
 				this.router.navigate(['/company-details', this.Company._id]);
