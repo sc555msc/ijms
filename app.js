@@ -6,12 +6,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var candidate = require('./routes/candidate');
+var curriculumvitae = require('./routes/curriculumvitae');
 var app = express();
 
 
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/ijms', { useMongoClient: true, promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
+  .then(() =>  console.log('database connection succesful'))
   .catch((err) => console.error(err));
 
 app.use(function(req, res, next) {
@@ -20,6 +21,7 @@ app.use(function(req, res, next) {
 	    "Access-Control-Allow-Headers",
 	    "Origin, X-Requested-With, Content-Type, Accept"
 	  );
+	  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
 	  next();
 	});
 app.use(logger('dev'));
@@ -27,7 +29,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/candidates', express.static(path.join(__dirname, 'dist')));
+app.use('/curriculum-vitae', express.static(path.join(__dirname, 'dist')));
 app.use('/candidate', candidate);
+app.use('/curriculum-vitae', curriculumvitae);
 
 //Base Route
 app.get('/', (req, res) => {

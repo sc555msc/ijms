@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h1>curriculum vitae List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> nic</th>
+        <th> name</th>
+        <th> birthdate</th>
+        <th><a routerLink = "/curriculum-vitae-create"  target="_blank">ADD</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let curriculumvitae of curriculumvitaes">
+        <td>{{ curriculumvitae.nic }}</td>
+        <td>{{ curriculumvitae.name }}</td>
+        <td>{{ curriculumvitae.birthdate }}</td>
+        <td><a routerLink="/curriculum-vitae-edit/{{curriculumvitae._id}}" class="btn btnsuccess">
+		EDIT</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

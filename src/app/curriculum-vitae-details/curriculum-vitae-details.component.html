@@ -1,0 +1,13 @@
+
+<div class="container" id="pdfTable" #pdfTable>
+	<h1>{{ curriculumvitae.name }}</h1>
+	<dl class="list">
+		<dt>nic</dt>
+		<dd>{{ curriculumvitae.nic }}</dd>
+		<dt>name</dt>
+		<dd>{{ curriculumvitae.name }}</dd>
+		<dt>birthdate</dt>
+		<dd>{{ curriculumvitae.birthdate }}</dd>
+	</dl>
+</div>
+<a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a>
