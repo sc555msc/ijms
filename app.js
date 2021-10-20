@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 
 var candidate = require('./routes/candidate');
 var company = require('./routes/company');
+var vacancy = require('./routes/vacancy');
 var app = express();
 
 
@@ -30,8 +31,10 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/candidates', express.static(path.join(__dirname, 'dist')));
 app.use('/company', express.static(path.join(__dirname, 'dist')));
+app.use('/vacancy', express.static(path.join(__dirname, 'dist')));
 app.use('/candidate', candidate);
 app.use('/company', company);
+app.use('/vacancy', vacancy);
 
 //Base Route
 app.get('/', (req, res) => {
