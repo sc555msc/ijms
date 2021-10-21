@@ -2,7 +2,7 @@
 import { Component, OnInit, Input, NgModule  } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
+import { NgForm, FormsModule, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
 import { CurriculumVitae } from "../model/curriculumvitae";
 import { CommonModule } from '@angular/common';
 import * as jimsGlobals from '../common/globals';
@@ -19,10 +19,9 @@ export class CurriculumVitaeCreateComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-	 
   }
   
-  saveCurriculumVitae(data:any) {
+  saveCurriculumVitae(data: any) {
   
 		this.http.post(jimsGlobals.back_end_api + '/curriculum-vitae', data)
 			.subscribe(res => {

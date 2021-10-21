@@ -5,6 +5,14 @@ var CurriculumVitaeSchema = new mongoose.Schema({
   name: String,
   birthdate: String,
   contact_no: String,
+  objective:String,
+  skills: [String],
+  degree:String,
+  university:String,
+  experince:String,
+  publications:String,
+  gpa:String,
+  references:String,
   registered_date: { type: Date, default: Date.now },
 });
 
