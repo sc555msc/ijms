@@ -1,0 +1,13 @@
+
+<div class="container" id="pdfTable" #pdfTable>
+	<h1>{{ company.title }}</h1>
+	<dl class="list">
+		<dt>title</dt>
+		<dd>{{ company.title }}</dd>
+		<dt>Address</dt>
+		<dd>{{ company.address }}</dd>
+		<dt>Phone</dt>
+		<dd>{{ company.contact_no }}</dd>
+	</dl>
+</div>
+<a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a>

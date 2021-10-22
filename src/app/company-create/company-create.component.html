@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Add New Company</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<form  #companyForm="ngForm" (ngSubmit)="saveCompany(companyForm.value)" >
+				<div class="form-group">
+					<label for="name">Title</label> <input type="text" #name="ngModel"
+						class="form-control" name="title" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">address</label> <input type="text" #name="ngModel"
+						class="form-control" name="address" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">contact_no</label> <input type="text" #name="ngModel"
+						class="form-control" name="contact_no" ngModel>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" >Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
