@@ -1,0 +1,30 @@
+
+<div class="container" id="pdfTable" #pdfTable>
+	<h1>{{ curriculumvitae.name }}</h1><a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a>
+	<dl class="list">
+		<dt>Objective</dt>
+		<dd>{{ curriculumvitae.objective }}</dd>
+		<dt>Competencies</dt>
+		<dd>{{ curriculumvitae.skills }}</dd>
+		<dt>Career Experince :</dt>
+		<dd>{{ curriculumvitae.experince }}</dd>
+		<dt>Projects, Research and Publications :</dt>
+		<dd>{{ curriculumvitae.publications }}</dd>
+		
+		Education 
+		<dt> University</dt>
+		<dd>{{ curriculumvitae.university }}</dd>
+		<dt>Degree</dt>
+		<dd>{{ curriculumvitae.degree }}</dd>
+		<dt>GPA</dt>
+		<dd>{{ curriculumvitae.gpa }}</dd>
+		
+		Personal Details
+		<dt>NIC</dt>
+		<dd>{{ curriculumvitae.nic }}</dd>
+		<dt>Full Name</dt>
+		<dd>{{ curriculumvitae.name }}</dd>
+		<dt>Birth Date</dt>
+		<dd>{{ curriculumvitae.birthdate }}</dd>
+	</dl>
+</div>
