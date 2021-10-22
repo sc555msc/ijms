@@ -11,6 +11,10 @@ import { CompanyComponent } from './company/company.component';
 import { CompanyCreateComponent } from './company-create/company-create.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { CompanyEditComponent } from './company-edit/company-edit.component';
+import { VacancyComponent } from './vacancy/vacancy.component';
+import { VacancyCreateComponent } from './vacancy-create/vacancy-create.component';
+import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
+import { VacancyEditComponent } from './vacancy-edit/vacancy-edit.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -22,7 +26,11 @@ import { HomeComponent } from './home/home.component';
     CompanyComponent,
     CompanyCreateComponent,
     CompanyEditComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    VacancyComponent,
+    VacancyCreateComponent,
+    VacancyEditComponent,
+    VacancyDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,25 @@ import { HomeComponent } from './home/home.component';
 		    path: 'company',
 		    component: CompanyComponent
 		  },
+		  {
+				path: 'vacancy-create',
+				component: VacancyCreateComponent,
+				data: { title: 'Create vacancy' }
+				},
+				{
+				path: 'vacancy-details/:id',
+				component: VacancyDetailsComponent,
+				data: { title: 'vacancy Details' }
+				},
+				{
+				path: 'vacancy-edit/:id',
+				component: VacancyEditComponent,
+				data: { title: 'Edit vacancy' }
+				},
+	    	  {
+			    path: 'vacancy',
+			    component: VacancyComponent
+			  },
 		  {
 		    path: 'candidates',
 		    component: CandidateComponent
