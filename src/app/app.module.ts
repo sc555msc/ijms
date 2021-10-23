@@ -19,6 +19,8 @@ import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.co
 import { CurriculumVitaeCreateComponent } from './curriculum-vitae-create/curriculum-vitae-create.component';
 import { CurriculumVitaeDetailsComponent } from './curriculum-vitae-details/curriculum-vitae-details.component';
 import { CurriculumVitaeEditComponent } from './curriculum-vitae-edit/curriculum-vitae-edit.component';
+import { InterviewCreateComponent } from './interview-create/interview-create.component';
+import { InterviewDetailsComponent } from './interview-details/interview-details.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -38,7 +40,8 @@ import { HomeComponent } from './home/home.component';
     CurriculumVitaeComponent,
     CurriculumVitaeCreateComponent,
     CurriculumVitaeEditComponent,
-    CurriculumVitaeDetailsComponent
+    CurriculumVitaeDetailsComponent,
+    InterviewCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +106,16 @@ import { HomeComponent } from './home/home.component';
 		    path: 'curriculum-vitae',
 		    component: CurriculumVitaeComponent
 		  },
+		  {
+		    path: 'schedule_interview/:id',
+			component: InterviewCreateComponent,
+			data: { title: 'Schedule Interview' }
+			},
+			{
+			path: 'interview-details/:id',
+			component: InterviewDetailsComponent,
+			data: { title: 'Interview Details' }
+			},
 		  {
 		    path: 'candidates',
 		    component: CandidateComponent

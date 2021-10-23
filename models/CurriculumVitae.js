@@ -13,6 +13,7 @@ var CurriculumVitaeSchema = new mongoose.Schema({
   publications:String,
   gpa:String,
   references:String,
+  email:String,
   registered_date: { type: Date, default: Date.now },
 });
 

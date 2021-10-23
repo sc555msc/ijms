@@ -12,9 +12,11 @@ export class CurriculumVitae {
 	  publications:String;
 	  references:String;
 	  gpa:String;
+	  email:String;
     
     constructor(c_id: String,  nic: String,  name: String,  contact_no: String, birthdate: String,
-    skills: String[],objective:String, degree:String,university:String,experince:String,publications:String,references:String,gpa:String	  ){
+    skills: String[],objective:String, degree:String,university:String,experince:String,publications:String,
+    references:String,gpa:String,email:String,	  ){
           this.c_id = c_id;
 		  this.nic = nic;
 		  this.name = name;
@@ -28,5 +30,6 @@ export class CurriculumVitae {
 		  this.publications = publications;
 		  this.references = references;
 		  this.gpa = gpa;
+		  this.email = email;
     }
  }

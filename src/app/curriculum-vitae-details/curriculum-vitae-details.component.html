@@ -1,30 +1,26 @@
 
 <div class="container" id="pdfTable" #pdfTable>
-	<h1>{{ curriculumvitae.name }}</h1><a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a>
-	<dl class="list">
-		<dt>Objective</dt>
-		<dd>{{ curriculumvitae.objective }}</dd>
-		<dt>Competencies</dt>
-		<dd>{{ curriculumvitae.skills }}</dd>
-		<dt>Career Experince :</dt>
-		<dd>{{ curriculumvitae.experince }}</dd>
-		<dt>Projects, Research and Publications :</dt>
-		<dd>{{ curriculumvitae.publications }}</dd>
-		
-		Education 
-		<dt> University</dt>
-		<dd>{{ curriculumvitae.university }}</dd>
-		<dt>Degree</dt>
-		<dd>{{ curriculumvitae.degree }}</dd>
-		<dt>GPA</dt>
-		<dd>{{ curriculumvitae.gpa }}</dd>
-		
-		Personal Details
-		<dt>NIC</dt>
-		<dd>{{ curriculumvitae.nic }}</dd>
-		<dt>Full Name</dt>
-		<dd>{{ curriculumvitae.name }}</dd>
-		<dt>Birth Date</dt>
-		<dd>{{ curriculumvitae.birthdate }}</dd>
-	</dl>
+	<h1>{{ curriculumvitae.name }}</h1>
+	<table>
+	<thead>
+		<tr>
+		<td><a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a></td>
+		<td><a routerLink = "/schedule_interview/{{curriculumvitae._id}}"  target="_blank" class="btn btnsuccess">Schedule Interview</a></td>
+		<tr>
+	</thead>
+	<tbody>
+	<tr><td>Objective :</td><td>{{ curriculumvitae.objective }}</td></tr>
+	<tr><td>Competencies :</td><td>{{ curriculumvitae.skills }}</td></tr>
+	<tr><td>Career Experince :</td><td>{{ curriculumvitae.experince }}</td></tr>
+	<tr><td>Research and Publications :</td><td>{{ curriculumvitae.publications }}</td></tr>
+	
+	<tr><td>University :</td><td>{{ curriculumvitae.university }}</td></tr>
+	<tr><td>Degree :</td><td>{{ curriculumvitae.degree }}</td></tr>
+	<tr><td>GPA :</td><td>{{ curriculumvitae.gpa }}</td></tr>
+	
+	<tr><td>NIC :</td><td>{{ curriculumvitae.nic }}</td></tr>
+	<tr><td>Full Name :</td><td>{{ curriculumvitae.name }}</td></tr>
+	<tr><td>Birth Date :</td><td>{{ curriculumvitae.birthdate }}</td></tr>
+	</tbody>
+	</table>
 </div>
