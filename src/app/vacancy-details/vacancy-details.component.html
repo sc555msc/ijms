@@ -1,22 +1,17 @@
 
 <div class="container" id="pdfTable" #pdfTable>
-	<h1>{{ vacancy.position }}</h1>
-	<dl class="list">
-		<dt>Position</dt>
-		<dd>{{ vacancy.position }}</dd>
-		<dt>Due Date</dt>
-		<dd>{{ vacancy.due_date }}</dd>
-		<dt>Catogery</dt>
-		<dd>{{ vacancy.catogery }}</dd>
-		<dt>Company</dt>
-		<dd>{{ vacancy.company }}</dd>
-		<dt>Skills</dt>
-		<dd>{{ vacancy.skills }}</dd>
-		<dt>Experince (in Years)</dt>
-		<dd>{{ vacancy.experince }}</dd>
-		<dt>Posted Date</dt>
-		<dd>{{ vacancy.posted_date }}</dd>
-		
-	</dl>
+	<h1>{{ vacancy.position }}</h1>  
+  <table>
+	<thead><tr></tr></thead>
+	<tbody>
+		<tr><td>Position of the Vacancy</td><td>{{ vacancy.position }}</td></tr>
+		<tr><td>Due Date</td><td>{{ vacancy.due_date }}</td></tr>
+		<tr><td>Catogery</td><td>{{ vacancy.due_date }}</td></tr>
+		<tr><td>Company</td><td>{{ vacancy.company }}</td></tr>
+		<tr><td>Skills</td><td>{{vacancy.skills}}</td></tr>
+    <tr><td>Experince </td><td>{{ vacancy.experince }}</td></tr>
+    <tr><td>Posted Date </td><td>{{ vacancy.posted_date }}</td></tr>
+	</tbody>
+	</table>
 </div>
-<a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a>
+<a (click)="downloadAsPDF()" class="btn btnsuccess">Downlaod PDF</a>
