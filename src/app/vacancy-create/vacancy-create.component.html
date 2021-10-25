@@ -1,0 +1,45 @@
+<div class="container">
+	<h1>Add New Vacancy</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<form  #vacancyForm="ngForm" (ngSubmit)="saveVacancy(vacancyForm.value)" >
+				<div class="form-group">
+					<label for="name">Position</label> <input type="text" #name="ngModel"
+						class="form-control" name="position" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Due Date</label> <input type="date" #name="ngModel"
+						class="form-control" name="due_date" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Catogery</label>
+					<select class='form-control' #name="ngModel" id='catogery' name='catogery' ngModel>
+					<option value='Information Technology'>Information Technology</option>
+            		<option value="HR" >Human Resource</option>
+            		<option value="Agri" > Agriculture</option>
+                </select>
+                </div>
+				<div class="form-group">
+					<label for="name">Company</label> <input type="text" #name="ngModel"
+						class="form-control" name="company" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Skills</label>
+					<select class='form-control' #name="ngModel" id='skills' name='skills' ngModel multiple>
+					<option value='Angular Js'>Angular Js</option>
+            		<option value="Java" selected="">Java</option>
+            		<option value="JBoss" selected=""> JBoss</option>
+                </select>
+				</div>
+				<div class="form-group">
+					<label for="name">Experince</label> <input type="number" #name="ngModel"
+						class="form-control" name="experince" ngModel>
+				</div>
+				
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" >Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

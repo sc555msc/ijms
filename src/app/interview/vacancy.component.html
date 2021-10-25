@@ -1,0 +1,53 @@
+
+<div class="container-fluid row">
+  <div class="col-md-2">
+  <h3>Search</h3> 
+  <form  #vacancyForm="ngForm" (ngSubmit)="searchVacancy(vacancyForm.value)" >
+		<div class="form-group">
+			<label for="name">Position</label> <input type="text" #name="ngModel"
+				class="form-control" name="position" ngModel>
+		</div>
+		<div class="form-group">
+			<label for="name">Catogery</label>
+			<select class='form-control' #name="ngModel" id='catogery' name='catogery' ngModel>
+			<option value='Information Technology'>Information Technology</option>
+          		<option value="HR" >Human Resource</option>
+          		<option value="Agri" > Agriculture</option>
+              </select>
+              </div>
+		<div class="form-group">
+			<label for="name">Company</label> <input type="text" #name="ngModel"
+				class="form-control" name="company" ngModel>
+		</div>
+		
+		<div class="form-group">
+			<button type="submit" class="btn btn-success" >Search</button>
+		</div>
+	</form>
+  </div><div class="col-md-1"></div>
+  
+  <div class="col-md-9">
+  <h1>Available Vacancies</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Position</th>
+        <th> Due Date</th>
+        <th> Company</th>
+        <th> Catogery</th>
+        <th><a routerLink = "/vacancy-create"  target="_blank">ADD</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vacancy of vacancies">
+        <td>{{ vacancy.position }}</td>
+        <td>{{ vacancy.due_date }}</td>
+        <td>{{ vacancy.company }}</td>
+        <td>{{ vacancy.catogery }}</td>
+        <td><a routerLink="/vacancy-edit/{{vacancy._id}}" class="btn btnsuccess">
+		EDIT</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

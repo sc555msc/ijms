@@ -1,0 +1,61 @@
+<div class="container">
+	<h1>Schedule Interview</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<form  #interviewForm="ngForm" (ngSubmit)="saveInterview(interviewForm.value)" >
+				<div class="form-group">
+					<label for="name">Curriculum Vitae</label> <input type="text" #name="ngModel"
+						class="form-control" name="cv" [(ngModel)]="curriculumvitae.name">
+				</div>
+				<div class="form-group">
+					<label for="name">Student Email (To)</label> <input type="text" #name="ngModel"
+						class="form-control" name="email" [(ngModel)]="curriculumvitae.email">
+				</div>
+				<div class="form-group">
+					<label for="name">Vacancy</label>
+					<select class='form-control' #name="ngModel" name='vacancy' ngModel>	
+					<option >Select</option>				
+					<option *ngFor="let vacancy of vacancies" [(ngModel)]="vacancy.position">{{vacancy.position}}</option>
+                	</select>
+                </div>
+                <div class="form-group">
+					<label for="name">Company</label>
+					<select class='form-control' #name="ngModel" name='company' ngModel>					
+					<option >Select</option>					
+					<option *ngFor="let vacancy of vacancies" [(ngModel)]="vacancy.company">{{vacancy.company}}</option>
+                	</select>
+                </div>
+				<div class="form-group">
+					<label for="name">Scheduled Date</label> <input type="date" #name="ngModel"
+						class="form-control" name="s_date" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Scheduled Time</label> <input type="time" #name="ngModel"
+						class="form-control" name="time" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Email Notification subject</label> <input type="text" #name="ngModel" rows='1' cols='80'
+						class="form-control" name="subject" ngModel  
+						value="Interview for the post of {{interviewForm.value.vacancy}}">
+				</div>
+				
+				<div class="form-group">
+					<label for="name">Email Notification</label>
+						<textarea  type='text' class='form-control' #name="ngModel" name="content" ngModel
+                                 rows='6' cols='80' ngModel   
+               value="Dear {{curriculumvitae.name}},
+               We would like to invite you to interview for the {{interviewForm.value.vacancy}} role 
+               at {{interviewForm.value.company}}.                                 
+               Please reply to this email directly with your availability during the following date and time:
+			{{interviewForm.value.s_date}} {{interviewForm.value.time}}			
+		We look forward to speaking with you. 			
+		Sincerely,{{interviewForm.value.company}}" ></textarea>
+				</div>
+				
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" >Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
