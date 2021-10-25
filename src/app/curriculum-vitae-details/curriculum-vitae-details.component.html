@@ -1,0 +1,26 @@
+
+<div class="container" id="pdfTable" #pdfTable>
+	<h1>{{ curriculumvitae.name }}</h1>
+	<table>
+	<thead>
+		<tr>
+		<td><a (click)="downloadAsPDF()" class="btn btnsuccess">PDF</a></td>
+		<td><a routerLink = "/schedule_interview/{{curriculumvitae._id}}"  target="_blank" class="btn btnsuccess">Schedule Interview</a></td>
+		<tr>
+	</thead>
+	<tbody>
+	<tr><td>Objective :</td><td>{{ curriculumvitae.objective }}</td></tr>
+	<tr><td>Competencies :</td><td>{{ curriculumvitae.skills }}</td></tr>
+	<tr><td>Career Experince :</td><td>{{ curriculumvitae.experince }}</td></tr>
+	<tr><td>Research and Publications :</td><td>{{ curriculumvitae.publications }}</td></tr>
+	
+	<tr><td>University :</td><td>{{ curriculumvitae.university }}</td></tr>
+	<tr><td>Degree :</td><td>{{ curriculumvitae.degree }}</td></tr>
+	<tr><td>GPA :</td><td>{{ curriculumvitae.gpa }}</td></tr>
+	
+	<tr><td>NIC :</td><td>{{ curriculumvitae.nic }}</td></tr>
+	<tr><td>Full Name :</td><td>{{ curriculumvitae.name }}</td></tr>
+	<tr><td>Birth Date :</td><td>{{ curriculumvitae.birthdate }}</td></tr>
+	</tbody>
+	</table>
+</div>

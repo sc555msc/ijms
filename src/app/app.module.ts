@@ -15,6 +15,12 @@ import { VacancyComponent } from './vacancy/vacancy.component';
 import { VacancyCreateComponent } from './vacancy-create/vacancy-create.component';
 import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
 import { VacancyEditComponent } from './vacancy-edit/vacancy-edit.component';
+import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
+import { CurriculumVitaeCreateComponent } from './curriculum-vitae-create/curriculum-vitae-create.component';
+import { CurriculumVitaeDetailsComponent } from './curriculum-vitae-details/curriculum-vitae-details.component';
+import { CurriculumVitaeEditComponent } from './curriculum-vitae-edit/curriculum-vitae-edit.component';
+import { InterviewCreateComponent } from './interview-create/interview-create.component';
+import { InterviewDetailsComponent } from './interview-details/interview-details.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -30,7 +36,12 @@ import { HomeComponent } from './home/home.component';
     VacancyComponent,
     VacancyCreateComponent,
     VacancyEditComponent,
-    VacancyDetailsComponent
+    VacancyDetailsComponent,
+    CurriculumVitaeComponent,
+    CurriculumVitaeCreateComponent,
+    CurriculumVitaeEditComponent,
+    CurriculumVitaeDetailsComponent,
+    InterviewCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +87,35 @@ import { HomeComponent } from './home/home.component';
 			    path: 'vacancy',
 			    component: VacancyComponent
 			  },
+		  {
+		    path: 'curriculum-vitae-create',
+			component: CurriculumVitaeCreateComponent,
+			data: { title: 'Create CurriculumVitae' }
+			},
+			{
+			path: 'curriculum-vitae-details/:id',
+			component: CurriculumVitaeDetailsComponent,
+			data: { title: 'CurriculumVitae Details' }
+			},
+			{
+			path: 'curriculum-vitae-edit/:id',
+			component: CurriculumVitaeEditComponent,
+			data: { title: 'Edit CurriculumVitae' }
+			},
+    	  {
+		    path: 'curriculum-vitae',
+		    component: CurriculumVitaeComponent
+		  },
+		  {
+		    path: 'schedule_interview/:id',
+			component: InterviewCreateComponent,
+			data: { title: 'Schedule Interview' }
+			},
+			{
+			path: 'interview-details/:id',
+			component: InterviewDetailsComponent,
+			data: { title: 'Interview Details' }
+			},
 		  {
 		    path: 'candidates',
 		    component: CandidateComponent
