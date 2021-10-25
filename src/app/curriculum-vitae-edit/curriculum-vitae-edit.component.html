@@ -1,28 +1,36 @@
 <div class="container">
-	<h1>Edit curriculum vitae</h1>
+	<h1>Edit Your Curriculum Vitae</h1>
 	<div class="row">
 		<div class="col-md-12">
 			<form  #curriculumVitaeForm="ngForm" (ngSubmit)="updateCurriculumVitae(curriculumVitaeForm.value)" >
-				
+        
 				<div class="form-group">
-					<label for="name">nic</label> <input type="text" #name="ngModel"
-						class="form-control" name="nic" [(ngModel)]="curriculumvitae.nic">
-				</div>
+					<label for="name">Objective</label>
+						<textarea  type='text' class='form-control' #name="ngModel" name="objective" [(ngModel)]="curriculumvitae.objective"
+                                 rows='2' cols='80' ></textarea>
+				</div>	
 				<div class="form-group">
-					<label for="name">name</label> <input type="text" #name="ngModel"
-						class="form-control" name="name" [(ngModel)]="curriculumvitae.name">
-				</div>
-				<div class="form-group">
-					<label for="name">birthdate</label> <input type="text" #name="ngModel"
-						class="form-control" name="birthdate" [(ngModel)]="curriculumvitae.birthdate">
-				</div>
-				<div class="form-group">
-					<label for="name">Skills</label>
+					<label for="name">Competencies</label>
 					<select class='form-control' #name="ngModel" id='skills' name='skills' [(ngModel)]="curriculumvitae.skills" multiple>
 						<option value='Angular Js'>Angular Js</option>
             			<option value="Java" selected="">Java</option>
             			<option value="JBoss" selected=""> JBoss</option>
 	                </select>
+				</div>
+        
+        <strong>Personal Details :</strong>
+        
+				<div class="form-group">
+					<label for="name">NIC</label> <input type="text" #name="ngModel"
+						class="form-control" name="nic" [(ngModel)]="curriculumvitae.nic">
+				</div>
+				<div class="form-group">
+					<label for="name">Full Name</label> <input type="text" #name="ngModel"
+						class="form-control" name="name" [(ngModel)]="curriculumvitae.name">
+				</div>
+				<div class="form-group">
+					<label for="name"> Date of birth</label> <input type="text" #name="ngModel"
+						class="form-control" name="birthdate" [(ngModel)]="curriculumvitae.birthdate">
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" >Save</button>
