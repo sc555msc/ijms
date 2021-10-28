@@ -4,7 +4,7 @@
 		<div class="col-md-12">
 			<form  #interviewForm="ngForm" (ngSubmit)="saveInterview(interviewForm.value)" >
 				<div class="form-group">
-					<label for="name">Curriculum Vitae</label> <input type="text" #name="ngModel"
+					<label for="name">Name of the Candidate</label> <input type="text" #name="ngModel"
 						class="form-control" name="cv" [(ngModel)]="curriculumvitae.name">
 				</div>
 				<div class="form-group">
@@ -12,7 +12,7 @@
 						class="form-control" name="email" [(ngModel)]="curriculumvitae.email">
 				</div>
 				<div class="form-group">
-					<label for="name">Vacancy</label>
+					<label for="name">Position of the Vacancy</label>
 					<select class='form-control' #name="ngModel" name='vacancy' ngModel>	
 					<option >Select</option>				
 					<option *ngFor="let vacancy of vacancies" [(ngModel)]="vacancy.position">{{vacancy.position}}</option>
