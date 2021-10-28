@@ -1,0 +1,74 @@
+<div class="container">
+	<h1>Add New curriculum vitae</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<form  #curriculumvitaeForm="ngForm" (ngSubmit)="saveCurriculumVitae(curriculumvitaeForm.value)" >
+				<div class="form-group">
+					<label for="name">Objective</label>
+						<textarea  type='text' class='form-control' #name="ngModel" name="objective" ngModel
+                                 rows='2' cols='80' ></textarea>
+				</div>				
+				<div class="form-group">
+					<label for="name">Competencies</label>
+					<select class='form-control' #name="ngModel" id='skills' name='skills' ngModel multiple>
+					<option value='Angular Js'>Angular Js</option>
+            		<option value="Java" >Java</option>
+            		<option value="JBoss" > JBoss</option>
+                </select>
+                </div>
+                <div class="form-group">
+					<label for="name">Career Experince :</label>
+					<input type="text" #name="ngModel"
+						class="form-control" name="experince" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Projects, Research and Publications :</label>
+						<textarea  type='text' class='form-control' #name="ngModel" name="publications" ngModel
+                                 rows='2' cols='80' ></textarea>
+				</div>
+				Education :
+                <div class="form-group">
+					<label for="name"> University</label>
+					<input type="text" #name="ngModel"
+						class="form-control" name="university" ngModel>
+				</div>
+                <div class="form-group">
+					<label for="name"> Degree</label>
+					<input type="text" #name="ngModel"
+						class="form-control" name="degree" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name"> GPA</label>
+					<input type="text" #name="ngModel"
+						class="form-control" name="gpa" ngModel>
+				</div>
+				Personal Details
+				<div class="form-group">
+					<label for="name">Full Name</label> <input type="text" #name="ngModel"
+						class="form-control" name="name" ngModel>
+				</div>				
+				<div class="form-group">
+					<label for="name">NIC</label> <input type="text" #name="ngModel"
+						class="form-control" name="nic" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Birthdate</label> <input type="date" #name="ngModel"
+						class="form-control" name="birthdate" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">Email Address </label> <input type="email" #name="ngModel"
+						class="form-control" name="email" ngModel>
+				</div>
+				<div class="form-group">
+					<label for="name">References</label>
+						<textarea  type='text' class='form-control' #name="ngModel" name="references" ngModel
+                                 rows='2' cols='80' ></textarea>
+				</div>
+				
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" >Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

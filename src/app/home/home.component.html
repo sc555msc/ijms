@@ -1,0 +1,52 @@
+
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="IJMS Logo"
+    src="/assets/img/job-search.png"
+  />
+  <span>Industrial Job Management System</span>
+    <div class="spacer"></div>
+</div>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  
+  <!-- Resources -->
+  
+  <p>Find your future here..</p>
+  <h2>Students...</h2>
+
+  <div class="card-container">
+    <button class="card card-small" routerLink = "/curriculum-vitae"  target="_blank" >
+      
+      <span>Add curriculum vitae</span>
+   </button>
+
+
+  </div>
+
+  <!-- Next Steps -->
+  <h2>Companies...</h2>
+
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <button class="card card-small" routerLink = "/company"  target="_blank" >
+      
+      <span>Add your Company</span>
+    </button>
+
+    <button class="card card-small"  routerLink = "/vacancy"  target="_blank">
+      
+      <span>Add your Vacancy</span>
+    </button>
+
+  </div>
+
+
+</div>
+
+<router-outlet></router-outlet>

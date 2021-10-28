@@ -1,0 +1,6 @@
+{
+  "/candidate": {
+   "target": "http://localhost:3000/candidate",
+   "secure": false
+  }
+}
