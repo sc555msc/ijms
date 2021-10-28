@@ -2,12 +2,6 @@
 on:
   push:
     branches:
-      - master
-
-
-on:
-  push:
-    branches:
       - develop_cicd
 
 
