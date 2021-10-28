@@ -1,13 +1,14 @@
 
 <div class="container">
-  <h1>curriculum vitae List</h1>
+  <h1>Curriculum Vitae List</h1>
   <table class="table">
     <thead>
       <tr>
-        <th> nic</th>
-        <th> name</th>
-        <th> birthdate</th>
-        <th><a routerLink = "/curriculum-vitae-create"  target="_blank">ADD</a></th>
+        <th> NIC</th>
+        <th> Full Name</th>
+        <th> Date of birth </th>
+        <th> Degree </th>
+        <th><a routerLink = "/curriculum-vitae-create"  target="_blank">Insert New Curriculum Vitae</a></th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td>{{ curriculumvitae.nic }}</td>
         <td>{{ curriculumvitae.name }}</td>
         <td>{{ curriculumvitae.birthdate }}</td>
+        <td>{{ curriculumvitae.degree }}</td>
         <td><a routerLink="/curriculum-vitae-edit/{{curriculumvitae._id}}" class="btn btnsuccess">
 		EDIT</a></td>
       </tr>

@@ -1,12 +1,13 @@
 
 <div class="container">
-  <h1>Companies List</h1>
+  <h1>Employers List</h1>
   <table class="table">
     <thead>
       <tr>
         <th> Title</th>
         <th> Address</th>
         <th> Telephone</th>
+        <th> Catogery</th>
         <th><a routerLink = "/company-create"  target="_blank">ADD</a></th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
         <td>{{ company.title }}</td>
         <td>{{ company.address }}</td>
         <td>{{ company.contact_no }}</td>
+        <td>{{ company.catogery }}</td>
         <td><a routerLink="/company-edit/{{company._id}}" class="btn btnsuccess">
 		EDIT</a></td>
       </tr>

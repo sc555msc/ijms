@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Add New curriculum vitae</h1>
+	<h1>Insert Your Curriculum Vitae</h1>
 	<div class="row">
 		<div class="col-md-12">
 			<form  #curriculumvitaeForm="ngForm" (ngSubmit)="saveCurriculumVitae(curriculumvitaeForm.value)" >
@@ -26,7 +26,7 @@
 						<textarea  type='text' class='form-control' #name="ngModel" name="publications" ngModel
                                  rows='2' cols='80' ></textarea>
 				</div>
-				Education :
+				<strong>Education :</strong>
                 <div class="form-group">
 					<label for="name"> University</label>
 					<input type="text" #name="ngModel"
@@ -42,7 +42,7 @@
 					<input type="text" #name="ngModel"
 						class="form-control" name="gpa" ngModel>
 				</div>
-				Personal Details
+				<strong>Personal Details :</strong>
 				<div class="form-group">
 					<label for="name">Full Name</label> <input type="text" #name="ngModel"
 						class="form-control" name="name" ngModel>

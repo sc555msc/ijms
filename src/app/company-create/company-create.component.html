@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Add New Company</h1>
+	<h1>Register Your Company</h1>
 	<div class="row">
 		<div class="col-md-12">
 			<form  #companyForm="ngForm" (ngSubmit)="saveCompany(companyForm.value)" >
@@ -8,16 +8,25 @@
 						class="form-control" name="title" ngModel>
 				</div>
 				<div class="form-group">
-					<label for="name">address</label> <input type="text" #name="ngModel"
+					<label for="name">Address</label> <input type="text" #name="ngModel"
 						class="form-control" name="address" ngModel>
 				</div>
 				<div class="form-group">
-					<label for="name">contact_no</label> <input type="text" #name="ngModel"
+					<label for="name">Contact No</label> <input type="text" #name="ngModel"
 						class="form-control" name="contact_no" ngModel>
 				</div>
+        <div class="form-group">
+					<label for="name">Catogery</label>
+					<select class='form-control' #name="ngModel" id='catogery' name='catogery' ngModel>
+					<option value='Information Technology'>Information Technology</option>
+            		<option value="HR" >Human Resource</option>
+            		<option value="Agri" > Agriculture</option>
+                </select>
+                </div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" >Save</button>
 				</div>
+        
 			</form>
 		</div>
 	</div>
