@@ -11,7 +11,7 @@ const rtsIndex = require('./route/index.router');
 
 var app = express();
 
-// Middleware 
+// Middleware
 app.use(bodyParse.json());
 app.use(cors());
 app.use(passport.initialize());
@@ -26,6 +26,6 @@ app.use((err, req, res, next) => {
     }
 });
 
-// start server 
+// start server
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
 

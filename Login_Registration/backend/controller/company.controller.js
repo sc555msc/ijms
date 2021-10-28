@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Student = mongoose.model('Student');
+const Company = mongoose.model('Company');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -8,13 +8,13 @@ const _ = require('lodash');
 
 
 module.exports.register = async (req, res, next) => {
-    var student = new Student();
-        student.fullname = req.body.fullname;
-        student.email = req.body.email;
-        student.password = req.body.password;
-        student.confirm_password = req.body.confirm_password;
+    var company = new Company();
+        company.fullname = req.body.fullname;
+        company.email = req.body.email;
+        company.password = req.body.password;
+        company.confirm_password = req.body.confirm_password;
 
-        student.save((err, doc) => {
+        company.save((err, doc) => {
         if (!err) {
             console.log("Saving the document...");
             res.send(doc);
@@ -29,24 +29,24 @@ module.exports.register = async (req, res, next) => {
 
 module.exports.authenticate = (req, res, next) => {
     // call for passport authentication
-    passport.authenticate('local', (err, student, info) => {
-      // error from passport middleware 
+    passport.authenticate('local', (err, company, info) => {
+      // error from passport middleware
       if (err) return res.status(400).json(err);
       // registered user
-      else if(student) return res.status(200).json({"token": student.generateJwt()});
+      else if(company) return res.status(200).json({"token": company.generateJwt()});
       // unkown user or wrong password
       else return res.status(404).json(info);
     })(req, res);
 };
 
-module.exports.studentProfile = async (req, res, next) => {
-    Student.findOne({ _id: req._id },
-        (err, student) => {
-            if(!student) 
-              return res.status(404).json({ status: false, message:"Student not found." });
-            else 
-              return res.status(200).json({ status: true, 
-                student: _.pick(student, ['fullname', 'email']) });
+module.exports.companyProfile = async (req, res, next) => {
+  Company.findOne({ _id: req._id },
+        (err, company) => {
+            if(!company)
+              return res.status(404).json({ status: false, message:"Company not found." });
+            else
+              return res.status(200).json({ status: true,
+                company: _.pick(company, ['fullname', 'email']) });
         }
     );
 };
@@ -61,7 +61,7 @@ router.post('/', function(req, res, next) {
 });
 
 
-*/ 
+*/
 
 // module.exports.register = (req, res, next) => {
 //         var student = new Student();
@@ -69,7 +69,7 @@ router.post('/', function(req, res, next) {
 //         student.email = req.body.email;
 //         student.password = req.body.password;
 //         student.save((err, doc) => {
-//                 if(!err) 
+//                 if(!err)
 //                     res.send(doc)
 //         });
 // }
@@ -88,7 +88,7 @@ router.post('/', function(req, res, next) {
           });
         }
         if(result) {
-          let token = jwt.sign({username:student.email}, 'verySecretPassword', 
+          let token = jwt.sign({username:student.email}, 'verySecretPassword',
           {expiresIn: '1h'});
           res.json({
             message: "Login Success",

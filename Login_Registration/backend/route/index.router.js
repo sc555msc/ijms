@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const ctrlStudent = require('../controller/student.controller');
-const jwtHelper = require('../config/jwtHelper'); 
+const ctrlCompany = require('../controller/company.controller');
+const jwtHelper = require('../config/jwtHelper');
 
-router.post('/register', ctrlStudent.register);
-router.post('/authenticate', ctrlStudent.authenticate);
-router.get('/studentProfile', jwtHelper.verifyJwtToken, ctrlStudent.studentProfile);
-/*router.post('/login', ctrlStudent.login);*/
+router.post('/register', ctrlCompany.register);
+router.post('/authenticate', ctrlCompany.authenticate);
+router.get('/companyProfile', jwtHelper.verifyJwtToken, ctrlCompany.companyProfile);
+/*router.post('/login', ctrlCompany.login);*/
 
-module.exports = router; 
+module.exports = router;
