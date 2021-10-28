@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - develop_cicd
+      - master
 
 env:
   NODE_VERSION: '14.17.4'               # set this to the node version to use
