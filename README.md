@@ -1,13 +1,30 @@
 # Ijms
 
 
-MEAN STACKangular": "12.2.0",
+## MEAN STACK
+angular": "12.2.0",
 "express": "4.17.1",
 "mongoose": "5.13.7",
-"node": "12.11.1",PDF LIBRARY
-"jspdf": "2.4.0",TEST LIBRARIES
+"node": "12.11.1",
+
+## PDF LIBRARY
+"jspdf": "2.4.0",
+
+## TEST LIBRARIES
 "karma": "6.3.0",
 "jasmine": "3.8.0",
+
+
+## SLACK
+https://app.slack.com/client/T029XF38K7G/C02AADWUZNY
+
+## Trello
+https://trello.com/b/dulbInRH/industrial-job-management-system
+
+## Gmail
+sc555.msc@gmail.com
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
